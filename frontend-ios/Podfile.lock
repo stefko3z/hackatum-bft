@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (5.4.4)
+  - TwoWayBondage (2.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - TwoWayBondage
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - TwoWayBondage
+
+SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  TwoWayBondage: bb5475a546a41719d61cac025a12a969fab0cb5e
+
+PODFILE CHECKSUM: b1d842d2f786dac5f00b16f50eb2070d8a2ee685
+
+COCOAPODS: 1.11.2
