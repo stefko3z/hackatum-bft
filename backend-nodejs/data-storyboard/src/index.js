@@ -77,7 +77,7 @@ async function generateIncomeInsight(container) {
     duration: 2000
   }).finished;
 
-  // Add scale animation
+  // Add idle animation for percent label
   anime({
     targets: [percentElem],
     scale: 2,
@@ -85,7 +85,9 @@ async function generateIncomeInsight(container) {
     loop: true,
     direction: 'alternate',
     easing: 'easeInOutSine'
-  })
+  });
+
+  // 
 }
 
 document.body.appendChild(component());
