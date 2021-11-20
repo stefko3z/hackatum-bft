@@ -1,33 +1,40 @@
-from flask import Blueprint
+from flask import Blueprint, Flask, request, jsonify, json, abort, Response
+from flask_cors import CORS, cross_origin
 import json
-from flask import request, jsonify
 import csv
 import time
-import datetime
+from datetime import datetime, timedelta
 import requests
 
 revenue_blueprint = Blueprint('revenue', __name__, url_prefix='/api/revenue')
 
+# Flask setup
+app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+methods = ('GET', 'POST')
 
-@revenue_blueprint.route('/weekly', methods=['POST'])
+
+@app.route('/start', methods=methods)
+@cross_origin()
 def get_revenue_breakdown():
     """product_id | store_id | date | sales | revenue | stock | price | promo_type_1 | promo_bin_1 | 
     promo_type_2 | promo_bin_2 | promo_discount_2 | promo_discount_type_2 """
 
     # -- Request-Arguments
     requestType = request.args.get("type")
-    timestamp = datetime.fromtimestamp(request.args.get("timestamp"))
+    timestamp = datetime.fromtimestamp(int(request.args.get("timestamp")))
 
     #"""For testing"""
     #requestType = 'Monthly'
     #timestamp = datetime.date(2017,5,10)
 
     numberOfDays = 0
-    if(requestType == 'Daily'):
+    if(requestType == 'daily'):
         numberOfDays = 1
-    if(requestType == 'Weekly'):
+    if(requestType == 'weekly'):
         numberOfDays = 7
-    if(requestType == 'Monthly'):
+    if(requestType == 'monthly'):
         numberOfDays = 31
 
     # ---- Get results
@@ -79,10 +86,10 @@ def look_back(now, time):
 
     with open('sales.csv') as csv_sales_data:
         #Time Frame
-        subtract = datetime.timedelta(time)
-        yesterday = now - datetime.timedelta(1)
+        subtract = timedelta(time)
+        yesterday = now - timedelta(1)
         curent_period_end = yesterday - subtract
-        previous_period_yesterday = curent_period_end - datetime.timedelta(1)
+        previous_period_yesterday = curent_period_end - timedelta(1)
         previous_period_end = previous_period_yesterday - subtract
 
         print('Time period: Today is: ' + str(now) + ' Yesterday is: ' + str(yesterday) + ' , and End (Curent P) = ' + str(curent_period_end) +
@@ -100,6 +107,7 @@ def look_back(now, time):
         for row in csv_reader:
             #Determine Curent Date on Row
             row_date = row[2].split('-')
+            print(row_date)
             curentDate = datetime.date(
                 int(row_date[0]), int(row_date[1]), int(row_date[2]))
 
@@ -169,4 +177,5 @@ def get_percent(current, previous):
 
 
 if __name__ == "__main__":
-    get_revenue_breakdown()
+    app.run(host='0.0.0.0', port=8100, debug=True)
+
