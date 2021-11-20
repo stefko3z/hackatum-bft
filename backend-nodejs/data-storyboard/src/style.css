@@ -6,19 +6,29 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 }
 
 .income_text_div {
   /* margin-top: 20px; */
   font-family: Arial, Helvetica, sans-serif;
-  color: #FFF;
+  color: #fff;
   font-size: large;
 }
 
 .income_text_div_percent {
-    /* margin-top: 20px; */
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: xx-large;
-  }
+  /* margin-top: 20px; */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: xx-large;
+}
+
+.arrow_svg {
+  width: 10em;
+}
+
+.income_path_wrapper {
+    margin-top: 50px;
+    width: 430;
+    height: 150;
+}
