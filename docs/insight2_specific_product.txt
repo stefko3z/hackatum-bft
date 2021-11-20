@@ -1,0 +1,8 @@
+Parameters:
+1. daily, weekly, monthly
+2. Product
+3. Units (absolute value)
+4. Positive/negative
+5. Percent
+
+Output: Product X has sold Y units on {day, weekly, monthly} which is {percent} {better/worse} compared to last {day, weekly, monthly}

@@ -1,0 +1,6 @@
+{
+    "type": "IncomeInsight",
+    "time": "Weekly/Daily/Monthly",
+    "positive": true,
+    "percent": 0.55
+}

@@ -1,0 +1,9 @@
+// Post /insights?type=weekly&?timestamp=1000000
+
+type = {
+    daily,
+    weekly,
+    monthly
+}
+
+timestamp = Unix seconds

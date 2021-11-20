@@ -1,0 +1,7 @@
+Parameters:
+1. daily, weekly, monthly
+2. Percent
+3. Positive / negative
+4. (Chart points)?
+
+Output: Procent increase/decrease compared to last {day, week, month}.
