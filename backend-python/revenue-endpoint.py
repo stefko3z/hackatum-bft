@@ -9,7 +9,7 @@ import requests
 revenue_blueprint = Blueprint('revenue', __name__, url_prefix='/api/revenue')
 
 
-@revenue_blueprint.route('/weekly', methods=['POST'])
+@revenue_blueprint.route('/revenue', methods=['POST'])
 def get_revenue_breakdown():
     """product_id | store_id | date | sales | revenue | stock | price | promo_type_1 | promo_bin_1 | 
     promo_type_2 | promo_bin_2 | promo_discount_2 | promo_discount_type_2 """
