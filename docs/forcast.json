@@ -1,0 +1,9 @@
+{
+    "type": "Forcast",
+    "time": "Weekly/Daily/Monthly",  
+    "product" : "P0042",
+    "positive": true,
+    "change_in_demand": 0.55,
+    "expectedDemand" : 250
+}
+ 
