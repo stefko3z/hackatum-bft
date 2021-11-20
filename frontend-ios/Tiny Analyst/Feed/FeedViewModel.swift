@@ -9,7 +9,7 @@ import Foundation
 
 class FeedViewModel {
     
-    var objects: [InsightData]? = [InsightData(category: "Weekly", htmlContent: "<title>Privet</title>"), InsightData(category: "Non Weekly", htmlContent: "<h1>Privet</h1>")]
+    var objects: [InsightData]? = [InsightData(category: "Weekly", htmlContent: "<h1>Hallelujah, Hallelujah Privet</h1>"), InsightData(category: "Non Weekly", htmlContent: "<h1>Privet</h1>")]
     
     var numberOfCells: Int {
         objects?.count ?? 0

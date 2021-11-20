@@ -17,28 +17,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VjY-qA-VYc">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VjY-qA-VYc">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="scrollIndicatorInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UW4-kt-OXg">
-                                    <size key="itemSize" width="413" height="792"/>
-                                    <size key="estimatedItemSize" width="413" height="792"/>
+                                    <size key="itemSize" width="127" height="206"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FeedCollectionViewCell" id="035-ah-caq" customClass="FeedCollectionViewCell" customModule="Tiny_Analyst" customModuleProvider="target">
-                                        <rect key="frame" x="0.5" y="0.0" width="413" height="792"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="206"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mpN-gk-fMi">
-                                            <rect key="frame" x="0.0" y="0.0" width="413" height="792"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="127" height="206"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXF-af-s0w">
-                                                    <rect key="frame" x="0.0" y="0.0" width="413" height="792"/>
-                                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                                </view>
+                                                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVy-4X-Oui">
+                                                    <rect key="frame" x="0.0" y="0.0" width="127" height="206"/>
+                                                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <wkWebViewConfiguration key="configuration">
+                                                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                        <wkPreferences key="preferences"/>
+                                                    </wkWebViewConfiguration>
+                                                </wkWebView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trv-4j-FFu">
                                                     <rect key="frame" x="8" y="8" width="41.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -46,25 +50,27 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.1415193975" green="0.6268800497" blue="0.91914969680000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="tXF-af-s0w" firstAttribute="leading" secondItem="mpN-gk-fMi" secondAttribute="leading" id="Jh0-lT-W1H"/>
-                                                <constraint firstAttribute="trailing" secondItem="tXF-af-s0w" secondAttribute="trailing" id="Jou-aj-mAG"/>
+                                                <constraint firstItem="xVy-4X-Oui" firstAttribute="leading" secondItem="mpN-gk-fMi" secondAttribute="leading" id="8yW-qz-2zu"/>
+                                                <constraint firstItem="xVy-4X-Oui" firstAttribute="top" secondItem="mpN-gk-fMi" secondAttribute="top" id="BVp-90-NKz"/>
+                                                <constraint firstAttribute="bottom" secondItem="xVy-4X-Oui" secondAttribute="bottom" id="QEY-PN-Tlm"/>
                                                 <constraint firstItem="Trv-4j-FFu" firstAttribute="top" secondItem="mpN-gk-fMi" secondAttribute="top" constant="8" id="XRY-5C-TSJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="xVy-4X-Oui" secondAttribute="trailing" id="YjH-jc-AMi"/>
                                                 <constraint firstItem="Trv-4j-FFu" firstAttribute="leading" secondItem="mpN-gk-fMi" secondAttribute="leading" constant="8" id="dSc-T7-p1U"/>
-                                                <constraint firstItem="tXF-af-s0w" firstAttribute="top" secondItem="mpN-gk-fMi" secondAttribute="top" id="r4h-8G-045"/>
-                                                <constraint firstAttribute="bottom" secondItem="tXF-af-s0w" secondAttribute="bottom" id="siX-gK-dF1"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Trv-4j-FFu" secondAttribute="trailing" constant="8" id="w3s-T5-RCj"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="413" height="792"/>
+                                        <size key="customSize" width="127" height="206"/>
                                         <connections>
                                             <outlet property="typeLabel" destination="Trv-4j-FFu" id="fin-RG-aiz"/>
-                                            <outlet property="view" destination="tXF-af-s0w" id="xhA-mx-cCi"/>
+                                            <outlet property="view" destination="xVy-4X-Oui" id="Pfv-Gc-pKM"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="7eA-BF-AEr"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ho5-2N-Qqz"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -89,9 +95,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

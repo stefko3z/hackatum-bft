@@ -38,3 +38,13 @@ extension FeedViewController: UICollectionViewDataSource {
         return cell
     }
 }
+extension FeedViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = Int(collectionView.frame.size.width)
+        let height = Int(collectionView.frame.size.height)
+        return CGSize(width: width, height: height)
+    }
+}
