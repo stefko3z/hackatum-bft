@@ -16,8 +16,17 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        InsightsRepository.getInsights { _ in }
+        viewModel.start()
+        bindEvents()
         // Do any additional setup after loading the view.
+    }
+    
+    func bindEvents() {
+        viewModel.objects.bindAndFire { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
+        }
     }
 }
 
@@ -45,7 +54,7 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = Int(collectionView.frame.size.width)
-        let height = Int(collectionView.frame.size.height)
+        let height = Int(collectionView.frame.size.height - view.safeAreaInsets.top - view.safeAreaInsets.bottom)
         return CGSize(width: width, height: height)
     }
 }
