@@ -3,7 +3,7 @@ from flask_cors import CORS, cross_origin
 import json
 import csv
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 import requests
 
 revenue_blueprint = Blueprint('revenue', __name__, url_prefix='/api/revenue')
@@ -67,15 +67,17 @@ def get_revenue_breakdown():
     #print("Revenue Persentage: " + str(percent_total_now_vs_previous) + ' positive: ' + str(positive))
 
     # --- Json
-    r = requests.post('localhost:3000/insights', data={
-        'type': 'IncomeInsight',
-        'time': requestType,
-        'positive': positive,
-        'percent': percent_total_now_vs_previous,
-        'chartPoints_old_current': {revenue_total_previous_period, revenue_total}
-    })
+    # r = requests.post('http://localhost:3000/insight', data={
+    #     'type': 'IncomeInsight',
+    #     'time': requestType,
+    #     'positive': positive,
+    #     'percent': percent_total_now_vs_previous,
+    #     'chartPoints_old_current': {revenue_total_previous_period, revenue_total}
+    # })
+    r = requests.get('http://localhost:3000/insight')
+    # print(r.text)
     if(r.status_code == 200):
-        return jsonify(r.json), 200
+        return jsonify(r.text), 200
     else:
         return jsonify('Bad responce! No Visual Element!'), 500
 
@@ -105,10 +107,12 @@ def look_back(now, time):
 
         csv_reader = csv.reader(csv_sales_data, delimiter=',')
         for row in csv_reader:
+            if line_count == 0:
+                line_count += 1
+                continue
             #Determine Curent Date on Row
             row_date = row[2].split('-')
-            print(row_date)
-            curentDate = datetime.date(
+            curentDate = datetime(
                 int(row_date[0]), int(row_date[1]), int(row_date[2]))
 
             # -- Curent Period
