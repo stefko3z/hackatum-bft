@@ -16,6 +16,8 @@
 		096A3F8127493AF4003A2816 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096A3F8027493AF4003A2816 /* FeedViewModel.swift */; };
 		096A3F8427493B36003A2816 /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096A3F8327493B36003A2816 /* FeedModel.swift */; };
 		096A3F8627493CD2003A2816 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096A3F8527493CD2003A2816 /* FeedCollectionViewCell.swift */; };
+		096A3F89274963DE003A2816 /* InsightsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096A3F88274963DD003A2816 /* InsightsRepository.swift */; };
+		B17EC4E19CFA6DD1D91919E9 /* Pods_Tiny_Analyst.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC8A2B856F5A46F9467A4D9 /* Pods_Tiny_Analyst.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,10 @@
 		096A3F8027493AF4003A2816 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		096A3F8327493B36003A2816 /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
 		096A3F8527493CD2003A2816 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		096A3F88274963DD003A2816 /* InsightsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsRepository.swift; sourceTree = "<group>"; };
+		5FC8A2B856F5A46F9467A4D9 /* Pods_Tiny_Analyst.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tiny_Analyst.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62F83AF17ACAC47B0D76420E /* Pods-Tiny Analyst.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tiny Analyst.release.xcconfig"; path = "Target Support Files/Pods-Tiny Analyst/Pods-Tiny Analyst.release.xcconfig"; sourceTree = "<group>"; };
+		B4458B3702E0754665ED62FB /* Pods-Tiny Analyst.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tiny Analyst.debug.xcconfig"; path = "Target Support Files/Pods-Tiny Analyst/Pods-Tiny Analyst.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B17EC4E19CFA6DD1D91919E9 /* Pods_Tiny_Analyst.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +55,8 @@
 			children = (
 				0958671527493657004451AD /* Tiny Analyst */,
 				0958671427493657004451AD /* Products */,
+				7D7FB38E22ED5D9804749D2F /* Pods */,
+				EBB4F423F971D700D7084AF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +71,7 @@
 		0958671527493657004451AD /* Tiny Analyst */ = {
 			isa = PBXGroup;
 			children = (
+				096A3F87274963BB003A2816 /* Repository */,
 				096A3F8227493B19003A2816 /* Feed */,
 				0958671627493657004451AD /* AppDelegate.swift */,
 				0958671827493657004451AD /* SceneDelegate.swift */,
@@ -84,6 +94,32 @@
 			path = Feed;
 			sourceTree = "<group>";
 		};
+		096A3F87274963BB003A2816 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				096A3F88274963DD003A2816 /* InsightsRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		7D7FB38E22ED5D9804749D2F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4458B3702E0754665ED62FB /* Pods-Tiny Analyst.debug.xcconfig */,
+				62F83AF17ACAC47B0D76420E /* Pods-Tiny Analyst.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EBB4F423F971D700D7084AF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FC8A2B856F5A46F9467A4D9 /* Pods_Tiny_Analyst.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,9 +127,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 095867272749365C004451AD /* Build configuration list for PBXNativeTarget "Tiny Analyst" */;
 			buildPhases = (
+				FD216FA0E4F83FAB15BACEC8 /* [CP] Check Pods Manifest.lock */,
 				0958670F27493657004451AD /* Sources */,
 				0958671027493657004451AD /* Frameworks */,
 				0958671127493657004451AD /* Resources */,
+				0EEA710848C6AFA77E2FA09D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -150,11 +188,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0EEA710848C6AFA77E2FA09D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tiny Analyst/Pods-Tiny Analyst-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tiny Analyst/Pods-Tiny Analyst-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tiny Analyst/Pods-Tiny Analyst-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD216FA0E4F83FAB15BACEC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tiny Analyst-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0958670F27493657004451AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				096A3F89274963DE003A2816 /* InsightsRepository.swift in Sources */,
 				0958671B27493657004451AD /* FeedViewController.swift in Sources */,
 				0958671727493657004451AD /* AppDelegate.swift in Sources */,
 				096A3F8627493CD2003A2816 /* FeedCollectionViewCell.swift in Sources */,
@@ -304,6 +385,7 @@
 		};
 		095867282749365C004451AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4458B3702E0754665ED62FB /* Pods-Tiny Analyst.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -332,6 +414,7 @@
 		};
 		095867292749365C004451AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62F83AF17ACAC47B0D76420E /* Pods-Tiny Analyst.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -25,6 +25,5 @@ class FeedCollectionViewCell: UICollectionViewCell, WKNavigationDelegate {
     func configureWith(_ data: InsightData?) {
         typeLabel.text = data?.category
         view.loadHTMLString(data?.htmlContent ?? "", baseURL: nil)
-        
     }
 }

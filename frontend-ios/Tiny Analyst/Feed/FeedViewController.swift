@@ -16,6 +16,7 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        InsightsRepository.getInsights { _ in }
         // Do any additional setup after loading the view.
     }
 }
