@@ -1,5 +1,6 @@
 import "./style.css";
 import { generateIncomeInsight } from "./income_insight_default";
+import { generateIncomeFifth } from "./income_insight_fifth";
 const config = require("./config");
 
 const initContainer = () => {
@@ -14,7 +15,11 @@ function component() {
 
   switch (config.type) {
     case "IncomeInsight":
-      generateIncomeInsight(container);
+      if(config.percent >= 0.15 && config.percent <= 0.34) {
+        generateIncomeFifth(container);
+      } else {
+        generateIncomeInsight(container);
+      }
       break;
     default:
       console.error(
