@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		0958671727493657004451AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958671627493657004451AD /* AppDelegate.swift */; };
 		0958671927493657004451AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958671827493657004451AD /* SceneDelegate.swift */; };
-		0958671B27493657004451AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958671A27493657004451AD /* ViewController.swift */; };
+		0958671B27493657004451AD /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958671A27493657004451AD /* FeedViewController.swift */; };
 		0958671E27493657004451AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0958671C27493657004451AD /* Main.storyboard */; };
 		095867202749365C004451AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0958671F2749365C004451AD /* Assets.xcassets */; };
 		095867232749365C004451AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 095867212749365C004451AD /* LaunchScreen.storyboard */; };
+		096A3F8127493AF4003A2816 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096A3F8027493AF4003A2816 /* FeedViewModel.swift */; };
+		096A3F8427493B36003A2816 /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096A3F8327493B36003A2816 /* FeedModel.swift */; };
+		096A3F8627493CD2003A2816 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096A3F8527493CD2003A2816 /* FeedCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0958671327493657004451AD /* Tiny Analyst.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tiny Analyst.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0958671627493657004451AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0958671827493657004451AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0958671A27493657004451AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0958671A27493657004451AD /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		0958671D27493657004451AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0958671F2749365C004451AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		095867222749365C004451AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		095867242749365C004451AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		096A3F8027493AF4003A2816 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		096A3F8327493B36003A2816 /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
+		096A3F8527493CD2003A2816 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,26 @@
 		0958671527493657004451AD /* Tiny Analyst */ = {
 			isa = PBXGroup;
 			children = (
+				096A3F8227493B19003A2816 /* Feed */,
 				0958671627493657004451AD /* AppDelegate.swift */,
 				0958671827493657004451AD /* SceneDelegate.swift */,
-				0958671A27493657004451AD /* ViewController.swift */,
 				0958671C27493657004451AD /* Main.storyboard */,
 				0958671F2749365C004451AD /* Assets.xcassets */,
 				095867212749365C004451AD /* LaunchScreen.storyboard */,
 				095867242749365C004451AD /* Info.plist */,
 			);
 			path = "Tiny Analyst";
+			sourceTree = "<group>";
+		};
+		096A3F8227493B19003A2816 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				0958671A27493657004451AD /* FeedViewController.swift */,
+				096A3F8027493AF4003A2816 /* FeedViewModel.swift */,
+				096A3F8327493B36003A2816 /* FeedModel.swift */,
+				096A3F8527493CD2003A2816 /* FeedCollectionViewCell.swift */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +155,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0958671B27493657004451AD /* ViewController.swift in Sources */,
+				0958671B27493657004451AD /* FeedViewController.swift in Sources */,
 				0958671727493657004451AD /* AppDelegate.swift in Sources */,
+				096A3F8627493CD2003A2816 /* FeedCollectionViewCell.swift in Sources */,
+				096A3F8427493B36003A2816 /* FeedModel.swift in Sources */,
+				096A3F8127493AF4003A2816 /* FeedViewModel.swift in Sources */,
 				0958671927493657004451AD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
