@@ -4,6 +4,10 @@ import time
 from datetime import datetime, timedelta, date
 import requests
 
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from scipy.signal import argrelextrema
 
 def get_data_byWeekly_sales_perProduct():
     line_count = 0
@@ -35,6 +39,7 @@ def get_data_byWeekly_sales_perProduct():
                 weeks[counter] = curent_week
                 counter +=1
                 end_period = end_period + addSeven
+                curent_week = {}
                 
             else:
                 if row[0] in curent_week:  # update Rev per Product
@@ -56,9 +61,66 @@ def get_data_byWeekly_sales_perProduct():
     #print('Weeks: ' + str(weeks))
     print('Start of Period: ' + str(start) +
           ' End of Period: ' + str(end_period))
-    for product in weeks[1]:
-        print('Product: ' + str(product) + ' Demand:' + str(weeks[1][product]))
-    return None
+    #for product in weeks[1]:
+        #print('Product: ' + str(product) + ' Demand:' + str(weeks[1][product]))
+    return weeks
 
 if __name__ == "__main__":
-   get_data_byWeekly_sales_perProduct()
+    week = get_data_byWeekly_sales_perProduct()
+    print('asd ' + str(type(week)))
+    productX_data = {}
+    
+    string_Products = ''
+    for products in week[1]: 
+        string_Products = string_Products + products + '; '
+
+    print('Products list: ' + string_Products)
+    
+    for product in string_Products.split('; '):   
+        print("------------ Product "+ str(product) + " ----------- ")
+        for counter in week:    
+            print( '>>>>>> Week <<<<<<<: ' + str(counter) ) 
+            try:
+                print(week[counter][product])
+                if product in productX_data:
+                    productX_data[product] = str(
+                        productX_data[product]) + '; ' + str(week[counter][product])
+                else:
+                    productX_data[product] = str(week[counter][product])
+            except KeyError as e:
+                if product in productX_data:
+                    productX_data[product] = str(
+                        productX_data[product]) + '; ' + str(0)
+                else:
+                    productX_data[product] = 0
+
+            
+            #productX_data.update( week[counter]['P0438']) 
+    count = 0
+    for prod in productX_data:
+        print('---> ' + prod + '---> ' + productX_data[prod])
+        print(" ")
+        integer_map = map(int, productX_data[prod].split('; '))
+        integer_list = list(integer_map)
+
+        x_axis = len(productX_data[prod])
+        df = pd.DataFrame({'X': x_axis, 'Y': integer_list})
+        ax = df.plot.bar(x='X', y='Y', rot=0)
+        plt.ylabel('Sold quantity')
+        #plt.legend(loc = 3)
+        #plt.show()
+
+        numpy_array = np.array(integer_list)
+        # for local maxima
+        Maximas = argrelextrema(numpy_array, np.greater)
+        
+        # for local minima
+        Minimas = argrelextrema(numpy_array, np.less)
+
+
+        """Future work: Analize the positions of the Min/Max values."""
+
+        print('Local Minimas: ' + str(Minimas) + ' . Local Maximas: ' + str(Maximas))
+        if(count == 2):
+            break
+        count +=1
