@@ -6,7 +6,7 @@
 }
 
 .element_wrapper {
-  margin-top: 20px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -27,4 +27,21 @@
 
 .income_filler {
   height: 50px;
+}
+
+.product_text_top {
+  margin-top: 20px;  
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  font-size: x-large;
+}
+
+.product_text_units {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  font-size: xx-large;
+}
+
+.product_emoji {
+  font-size: 80px;
 }
