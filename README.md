@@ -47,3 +47,11 @@ index.js defines an express server that serves two endpoints
 data-storyboard is the first iteration of the visualization which uses webpack to combine all js, css files into a single html. This is done for an easy integration with iOS, which will query and display the page.
 
 react-storyboards is the second iteration which utilizes react and inline html for a better development experience. Sadly, the webpack bundler is not compatible with react. Therefor this iteration is not yet compatible with the iOS app.
+
+## frontend-ios
+
+Simple mvvm app with three screens. Our goal was to move away from complicated UI and to limit the user's options. No dashboards, only the best insights, streamlined in a Gen Z manner.
+
+All of the screens contain Feeds with data stories for the respective timeframe(daily, weekly, monthly). Each of the stories has a read more button where detailed insights will be displayed.
+
+Currently only the daily feed is implemented.
