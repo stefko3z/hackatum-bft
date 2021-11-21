@@ -1,4 +1,8 @@
-# Pocket Analyst
+# Tiny Analyst
+
+## Abstract
+Tiny Analyst provides an easy to digest breakdown of all the important data needed to run your company. Today , next week, next month or many years into the future, we will show you how well your products are performing, how to optimise your warehousing, plan your promotions, discounts and much more. 
+
 This project consists of three parts:
 1. Flask server for data analysis and insight generation
 2. Express server for data stories generated from the insights via Animejs
@@ -50,8 +54,8 @@ react-storyboards is the second iteration which utilizes react and inline html f
 
 ## frontend-ios
 
-Simple mvvm app with three screens. Our goal was to move away from complicated UI and to limit the user's options. No dashboards, only the best insights, streamlined in a Gen Z manner.
+Simple mvvm app with three screens. Our goal was to move away from complicated UI and to limit the user's options. No dashboards, only the best insights, streamlined in a Gen Z manner. 
 
-All of the screens contain Feeds with data stories for the respective timeframe(daily, weekly, monthly). Each of the stories has a read more button where detailed insights will be displayed.
+All of the screens contain Feeds with data stories for the respective timeframe(daily, weekly, monthly). Each of the stories has a read more button where detailed insights will be displayed. Business critical user stories should be conveyed via push notifications.
 
 Currently only the daily feed is implemented.
