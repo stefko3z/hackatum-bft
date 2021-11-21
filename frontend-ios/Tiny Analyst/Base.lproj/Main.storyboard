@@ -19,7 +19,7 @@
                         <viewLayoutGuide key="safeArea" id="G5B-J2-cBa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Monthly" image="calendar" catalog="system" id="Dj6-u1-IBM"/>
+                    <tabBarItem key="tabBarItem" title="Monthly" image="30.square.fill" catalog="system" id="Dj6-u1-IBM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJg-we-3N4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -35,7 +35,7 @@
                         <viewLayoutGuide key="safeArea" id="0R7-zm-llx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Weekly" image="calendar" catalog="system" selectedImage="calendar" id="v00-rM-wg1"/>
+                    <tabBarItem key="tabBarItem" title="Weekly" image="7.square.fill" catalog="system" id="v00-rM-wg1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3Q-vK-fJ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -48,7 +48,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="frl-nf-Ohc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.49528139830000001" green="0.64294523000000003" blue="0.76917415860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <tabBarAppearance key="standardAppearance"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="TXP-GE-Qju"/>
@@ -70,48 +71,55 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VjY-qA-VYc">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="40" minimumInteritemSpacing="0.0" id="UW4-kt-OXg">
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="UW4-kt-OXg">
                                     <size key="itemSize" width="127" height="206"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="40" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FeedCollectionViewCell" id="035-ah-caq" customClass="FeedCollectionViewCell" customModule="Tiny_Analyst" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="40" width="127" height="206"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="206"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mpN-gk-fMi">
                                             <rect key="frame" x="0.0" y="0.0" width="127" height="206"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <wkWebView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVy-4X-Oui">
-                                                    <rect key="frame" x="-28" y="-10" width="155" height="216"/>
-                                                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="-38" y="-10" width="165" height="216"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <wkWebViewConfiguration key="configuration">
                                                         <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                                         <wkPreferences key="preferences"/>
                                                     </wkWebViewConfiguration>
                                                 </wkWebView>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trv-4j-FFu">
-                                                    <rect key="frame" x="8" y="8" width="41.5" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WG-h7-HNK">
+                                                    <rect key="frame" x="20" y="126" width="87" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="YCV-dm-OLz"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <buttonConfiguration key="configuration" style="tinted" title="Read More" cornerStyle="capsule">
+                                                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    </buttonConfiguration>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="xVy-4X-Oui" firstAttribute="leading" secondItem="mpN-gk-fMi" secondAttribute="leading" constant="-28" id="8B2-80-VmJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="0WG-h7-HNK" secondAttribute="trailing" constant="20" id="7jr-z9-Xar"/>
+                                                <constraint firstItem="xVy-4X-Oui" firstAttribute="leading" secondItem="mpN-gk-fMi" secondAttribute="leading" constant="-38" id="8B2-80-VmJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="xVy-4X-Oui" secondAttribute="bottom" id="FYc-wo-Okb"/>
+                                                <constraint firstAttribute="bottom" secondItem="0WG-h7-HNK" secondAttribute="bottom" constant="20" id="Fw6-3E-odY"/>
+                                                <constraint firstItem="0WG-h7-HNK" firstAttribute="centerX" secondItem="mpN-gk-fMi" secondAttribute="centerX" id="Qy6-V0-XSU"/>
                                                 <constraint firstAttribute="trailing" secondItem="xVy-4X-Oui" secondAttribute="trailing" id="hH1-hN-Hwl"/>
                                                 <constraint firstItem="xVy-4X-Oui" firstAttribute="top" secondItem="mpN-gk-fMi" secondAttribute="top" constant="-10" id="mpH-zD-4Vf"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="127" height="206"/>
                                         <connections>
-                                            <outlet property="typeLabel" destination="Trv-4j-FFu" id="fin-RG-aiz"/>
                                             <outlet property="view" destination="xVy-4X-Oui" id="Pfv-Gc-pKM"/>
                                         </connections>
                                     </collectionViewCell>
@@ -123,7 +131,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.49528139830000001" green="0.64294523000000003" blue="0.76917415860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VjY-qA-VYc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0qQ-0g-vse"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VjY-qA-VYc" secondAttribute="bottom" id="Gn8-6f-376"/>
@@ -131,7 +139,7 @@
                             <constraint firstItem="VjY-qA-VYc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mtf-5h-eZ6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Daily" image="calendar" catalog="system" id="xP1-2r-5HV"/>
+                    <tabBarItem key="tabBarItem" title="Daily" image="star.bubble.fill" catalog="system" id="xP1-2r-5HV"/>
                     <connections>
                         <outlet property="collectionView" destination="VjY-qA-VYc" id="OUW-Cl-NXX"/>
                     </connections>
@@ -142,9 +150,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="30.square.fill" catalog="system" width="128" height="114"/>
+        <image name="7.square.fill" catalog="system" width="128" height="114"/>
+        <image name="star.bubble.fill" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

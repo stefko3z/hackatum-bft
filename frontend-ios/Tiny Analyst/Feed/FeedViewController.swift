@@ -33,7 +33,7 @@ class FeedViewController: UIViewController {
 extension FeedViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfCells
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,7 +54,7 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = Int(collectionView.frame.size.width)
-        let height = Int(collectionView.frame.size.height - 40)
+        let height = Int(collectionView.frame.size.height)
         return CGSize(width: width, height: height)
     }
 }
