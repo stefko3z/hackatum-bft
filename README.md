@@ -1,9 +1,10 @@
-# hackatum-bft
+# Pocket Analyst
+This project consists of three parts:
+1. Flask server for data analysis and insight generation
+2. Express server for data stories generated from the insights via Animejs
+3. iOS app where the user receives the data stories
 
-
-
-
-# backend-python
+## backend-python
 Contains different endpoints, made available to the Swift User Interface. The Data-Set files have to be added manually in this folder to run the projects.
  
    revenue-endpoint.py :
@@ -37,4 +38,12 @@ Contains different endpoints, made available to the Swift User Interface. The Da
  
    And many other ideas that never made it.  
   
-   
+## backend-nodejs
+
+index.js defines an express server that serves two endpoints
+- /generate which generates a data story via animejs
+- /insights returns it as a html webpage
+
+data-storyboard is the first iteration of the visualization which uses webpack to combine all js, css files into a single html. This is done for an easy integration with iOS, which will query and display the page.
+
+react-storyboards is the second iteration which utilizes react and inline html for a better development experience. Sadly, the webpack bundler is not compatible with react. Therefor this iteration is not yet compatible with the iOS app.
